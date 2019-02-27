@@ -1,0 +1,61 @@
+<h1>Welcome to Tom’s Rails practice!</h1>
+
+<p>Your mission is to recreate this app (you can skip this page) to the best of your ability. Work with your group members to find all the features of this site, and implement them &mdash; starting with
+  <code>rails new</code>
+  and using the know-how that you've built through the labs. Failing that, error messages, Google, your neighbors, and your instructors can help!</p>
+
+<p>Work through the
+  <strong>entire</strong>
+  Authors controller (finish it!) before you start work on the Books controller. If you want to do your migrations / associations for all your models first, that's fine.</p>
+
+<h2>Some things to think about (in rough order of when you should probably think about them):</h2>
+<ol>
+  <li>Models and relationships
+    <ol>
+      <li>How many books can an author have?</li>
+      <li>How many authors can a book have?</li>
+    </ol>
+    (Following the links in the header should help you answer these questions! Make your decisions based on the
+    <em>functionality of the app</em>.)
+  </li>
+  <li>
+    <code>rails g model</code>
+  </li>
+  <li>Migrations</li>
+  <li>Associations</li>
+  <li>Routes</li>
+  <li>
+    <code>rails g controller</code>
+  </li>
+  <li>Views (if you haven't run
+    <code>rails s</code>
+    yet you should now)</li>
+  <li>Strong Params</li>
+  <li>Validations</li>
+  <li>
+    <code>form.collection_select</code>
+  </li>
+  <li>Nested Routes (this app uses them...somewhere. 🙃 You don't have to, but feel free to challenge yourself!)</li>
+  <li>MVC (refactoring...?)</li>
+  <li>
+    <code>before_action</code>
+    (more refactoring...?!?)</li>
+</ol>
+
+<h2>Seed data (if you want it):</h2>
+<textarea style="width: 90%; font-family: monospace; min-height: 400px;">
+  Author.destroy_all Book.destroy_all #good omens @neil_gaiman = Author.create(name: &quot;Neil Gaiman&quot;, birth_year: 1960) @terry_pratchett = Author.create(name: &quot;Terry Pratchett&quot;, birth_year: 1948) @good_omens = Book.create(title:
+  &quot;Good Omens&quot;, pages: 288) @good_omens.authors &lt;&lt; @neil_gaiman @good_omens.authors &lt;&lt; @terry_pratchett #reaper man @reaper_man = Book.create(title: &quot;Reaper Man&quot;, pages: 352, authors: [@terry_pratchett]) #heads you lose
+  @lisa_lutz = Author.create(name: &quot;Lisa Lutz&quot;, birth_year: 1970) @david_hayward = Author.create(name: &quot;David Hayward&quot;, birth_year: 1880) @heads_you_lose = Book.create(title: &quot;Heads You Lose&quot;, pages: 156)
+  @heads_you_lose.authors &lt;&lt; @lisa_lutz @heads_you_lose.authors &lt;&lt; @david_hayward #between the lines @jodi_picoult = Author.create(name: &quot;Jodi Picoult&quot;, birth_year: 1966) @samantha_van_leer = Author.create(name: &quot;Samantha van
+  Leer&quot;, birth_year: 1880) @between_the_lines = Book.create(title: &quot;Between the Lines&quot;, pages: 355) @between_the_lines.authors &lt;&lt; @jodi_picoult @between_the_lines.authors &lt;&lt; @samantha_van_leer #the cinderella murder
+  @mary_higgins_clark = Author.create(name: &quot;Mary Higgins Clark&quot;, birth_year: 1927) @alafair_burke = Author.create(name: &quot;Alafair Burke&quot;, birth_year: 1969) @the_cinderella_murder = Book.create(title: &quot;The Cinderella
+  Murder&quot;, pages: 320) @the_cinderella_murder.authors &lt;&lt; @mary_higgins_clark @the_cinderella_murder.authors &lt;&lt; @alafair_burke #why we broke up @daniel_handler = Author.create(name: &quot;Daniel Handler&quot;, birth_year: 1970)
+  @maira_kalman = Author.create(name: &quot;Maira Kalman&quot;, birth_year: 1949) @why_we_broke_up = Book.create(title: &quot;Why We Broke Up&quot;, pages: 384) @why_we_broke_up.authors &lt;&lt; @daniel_handler @why_we_broke_up.authors &lt;&lt;
+  @maira_kalman #the talisman @stephen_king = Author.create(name: &quot;Stephen King&quot;, birth_year: 1947) @peter_straub = Author.create(name: &quot;Peter Straub&quot;, birth_year: 1943) @the_talisman = Book.create(title: &quot;The Talisman&quot;,
+  pages: 921) @the_talisman.authors &lt;&lt; @stephen_king @the_talisman.authors &lt;&lt; @peter_straub #the shining @the_shining = Book.create(title: &quot;The Shining&quot;, pages: 447, authors: [@stephen_king]) #s @j_j_abrams = Author.create(name:
+  &quot;J.J. Abrams&quot;, birth_year: 1966) @doug_dorst = Author.create(name: &quot;Doug Dorst&quot;, birth_year: 1880) @s = Book.create(title: &quot;S.&quot;, pages: 472) @s.authors &lt;&lt; @j_j_abrams @s.authors &lt;&lt; @doug_dorst #dash and
+  lily&#39;s book of dares @rachel_cohn = Author.create(name: &quot;Rachel Cohn&quot;, birth_year: 1968) @david_levithan = Author.create(name: &quot;David Levithan&quot;, birth_year: 1972) @dash_lilys_book_of_dares = Book.create(title: &quot;Dash &amp;
+  Lily&#39;s Book of Dares&quot;, pages: 257) @dash_lilys_book_of_dares.authors &lt;&lt; @rachel_cohn @dash_lilys_book_of_dares.authors &lt;&lt; @david_levithan #relic @douglas_preston = Author.create(name: &quot;Douglas Preston&quot;, birth_year:
+  1956) @lincoln_child = Author.create(name: &quot;Lincoln Child&quot;, birth_year: 1957) @relic = Book.create(title: &quot;Relic&quot;, pages: 481) @relic.authors &lt;&lt; @douglas_preston @relic.authors &lt;&lt; @lincoln_child puts &quot;done!&quot;
+</textarea>
