@@ -6,10 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+AuthorBook.destroy_all
 Author.destroy_all
 Book.destroy_all
-
 #good omens
 @neil_gaiman = Author.create(name: "Neil Gaiman", birth_year: 1960)
 @terry_pratchett = Author.create(name: "Terry Pratchett", birth_year: 1948)

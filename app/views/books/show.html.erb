@@ -1,0 +1,25 @@
+<h1><%= @book.title%> (<%=@book.pages%> pages)</h1>
+
+<h2>Authors:</h2>
+<ul>
+  <% @book.authors.each do |author|%>
+  <li>
+    <a href= "<%= author_path(author) %>"> <%=author.name %> (b. <%=author.birth_year%>)</a>
+    <br>
+    <button type="button">
+      <%= link_to "Remove Author" , author.author_books.find_by(book_id: @book.id) , method: :delete , data: { confirm: 'Are you sure?' }, :id => "button1"%>
+    </button>
+
+  </li>
+
+  <%end %>
+
+</ul>
+
+<%= form_for @ab=AuthorBook.new do |f|%>
+
+  <%= f.label 'Author'%></br>
+  <%= f.collection_select :author_id , Author.all, :id, :name %>
+  <input id="author_book_book_id" name="author_book[book_id]" value="<%= @book.id%>" type="hidden">
+  <%= f.submit 'Add Author'%>
+<% end %>

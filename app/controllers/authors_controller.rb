@@ -31,11 +31,13 @@ class AuthorsController < ApplicationController
         render :edit
       end
     end
-
+    
     def destroy
+      @author.books.destroy_all
       @author.destroy
       redirect_to :action => 'index'
     end
+
     private
 
     def get_author
@@ -45,5 +47,5 @@ class AuthorsController < ApplicationController
     def authors_params
       params.require(:author).permit(:name, :birth_year)
     end
-
+    
 end
